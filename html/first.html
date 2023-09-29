@@ -26,10 +26,20 @@
     <p>
         A web page without any links is a unique and peculiar find. You can have links to separate sites such as
         <a href="https://www.leedsbeckett.ac.uk/">LeedsBeckett</a>. Links to other pages of the
-        <a href="https://www.leedsbeckett.ac.uk/international-students/">same site</a>. Links to another point in
-        <a href="https://www.leedsbeckett.ac.uk/international-students/#search">same page</a>
+        <a href="secondPage.html">same site</a>. Links to another point in
+        <a href="#anchor">same page</a>
     </p>
     <h2>Images</h2>
-
+    <p>
+        This image is stored on this server in an image sub-folder
+        <img src="../images/logo.jpg" height="100" width="100" alt="Leeds Beckett logo">
+    </p>
+    <!--TODO make text wrap image correctly-->
+    <p>I hope you added an alt attribute to support screen readers</p>
+    <p id="anchor">
+        Why not check to see what happens if you try to validate your code using W3C Markup Validation Service
+        without the alt attribute included. If you right click on your page and chose inspect or view source
+        you can check your code and see the HTML comment you have added inside the body tag
+    </p>
     </body>
 </html>
