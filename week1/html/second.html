@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+    <head>
+        <title>More Fundamentals of HTML</title>
+    </head>
+<body>
+<h1>More Fundamentals of HTML</h1>
+<h2>Tables</h2>
+<p>
+    Tables should only be used for tabulated data and not for page layout. As with all other HTML elements tables
+    should be styled with CSS but we will bend the rule slightly and use the border attribute for this exercise
+</p>
+<table border="1">
+    <caption>This caption helps screen readers to understand the table</caption>
+    <thead>
+        <tr>
+            <th>One</th>
+            <th>Two</th>
+            <th>Three</th>
+        </tr>
+    </thead>
+    <tr><td>This</td>
+        <td>That</td>
+        <td>Other</td>
+    </tr>
+    <tr><td>Which</td>
+        <td>What</td>
+        <td>When</td>
+    </tr>
+</table>
+<h2>Lists</h2>
+<p>
+    Lists are very important in web design, they are for example the basis of page navigation
+</p>
+<h2>Unordered Lists</h2>
+<ul>
+    <li>blue</li>
+    <li>red</li>
+    <li>green</li>
+</ul>
+<h2>Nested Lists</h2>
+<ol>
+    <li>one</li>
+    <li>two</li>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>three</li>
+</ol>
+<h2>Forms</h2>
+<h3>A simple login form</h3>
+<form>
+    <label>Username: <input type="text" name="txtUsername" id="txtUsername"/></label>
+    <label>Password: <input type="password" name="userPassword" id="userPassword"/></label>
+    <label><input type="submit"/></label>
+</form>
+<h3>Other common form elements and grouping by fieldset</h3>
+<form>
+    <fieldset>
+        <legend>
+            Enter your login details
+        </legend>
+        <label>Username: <input type="text" name="txtUsername2" id="txtUsername2"/></label>
+        <label>Password: <input type="password" name="userPassword2" id="userPassword2"/></label>
+    </fieldset>
+    <fieldset>
+        <legend>
+            Pizza Selection
+        </legend>
+        <br/>
+        Size:
+        <label><input type="radio" name="size" id="small"/> small</label>
+        <label><input type="radio" name="size" id="medium"/> medium</label>
+        <label><input type="radio" name="size" id="large"/> large</label>
+        <br/>
+        <br/>
+        Topping:
+        <select id="toppings" name="toppings">
+            <option value="please select">Please Select</option>
+            <option value="cheese">Cheese</option>
+            <option value="pepperoni">Pepperoni</option>
+        </select>
+        <br/>
+        <br/>
+        Extras:
+        <label><input type="checkbox" name="extra" id="parmesan"/> Parmesan</label>
+        <label><input type="checkbox" name="extra" id="olives"/> Olives</label>
+        <label><input type="checkbox" name="extra" id="capers"/> Capers</label>
+        <br/>
+        <br/>
+    </fieldset>
+    <label><input type="submit" name="submit" id="submit"/></label>
+    <label><input type="button" name="clear" id="clear" value="Clear"/></label>
+</form>
+</body>
+</html>
+
+
