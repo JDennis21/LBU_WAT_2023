@@ -1,0 +1,42 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 25px;
+}
+#selector{
+    font-weight: 800;
+}
+.spaced{
+    color: blueviolet;
+    letter-spacing: 1em;
+}
+ul{
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+li{
+    display: inline;
+    background-color: grey;
+    padding: 20px;
+    border: 2px solid green;
+    margin: 65px;
+    text-align: center;
+}
+.col1{
+    border: 2px solid green;
+    padding: 20px 65px 20px 20px;
+    margin: 15px;
+    float: left;
+}
+.col2{
+    border: 2px solid green;
+    padding: 20px 410px 20px 20px;
+    margin: 15px 15px 15px 35px;
+    float: left;
+}
+.col3{
+    border: 2px solid green;
+    padding: 20px 210px 20px 20px;
+    margin: 15px;
+    float: left;
+}
