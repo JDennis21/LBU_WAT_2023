@@ -23,19 +23,19 @@ li{
     text-align: center;
 }
 .col1{
-    border: 2px solid green;
+    border: 3px solid green;
     padding: 20px 65px 20px 20px;
     margin: 15px;
     float: left;
 }
 .col2{
-    border: 2px solid green;
+    border: 3px solid green;
     padding: 20px 410px 20px 20px;
     margin: 15px 15px 15px 35px;
     float: left;
 }
 .col3{
-    border: 2px solid green;
+    border: 3px solid green;
     padding: 20px 210px 20px 20px;
     margin: 15px;
     float: left;
