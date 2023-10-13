@@ -53,5 +53,8 @@
     echo "<br/>Height in meters: " . $meters ."<br/>";
     echo "<br/>Height in Feet and inches: " .floor($inches/12) ."ft " .($inches%12) ." ins<br/>";
 ?>
+<footer>
+    <small> <a href="../html/WatIndex.html">Home</a></small>
+</footer>
 </body>
 </html>
