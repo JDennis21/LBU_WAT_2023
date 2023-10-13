@@ -3,6 +3,7 @@ body{
     margin: 25px;
 }
 #selector{
+    letter-spacing: -0.2rem;
     font-weight: 800;
 }
 .spaced{
