@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Web Applications and Technologies</title>
+    <title>Fundamentals of PHP</title>
     <link type="text/css" rel="stylesheet" href="../style/main.css"/>
 </head>
 <body>
@@ -96,7 +96,7 @@
     echo "<br/>The item at index [3] is: " . $products[3];
 
     echo "<h2>Associative Arrays</h2>";
-    $customer = array('CustID'=>12, 'CustName'=>'Sarah', 'CustAge'=>23, 'CustGender'=>'F)');
+    $customer = array('CustID' => 12, 'CustName' => 'Sarah', 'CustAge' => 23, 'CustGender' => 'F)');
     print_r($customer);
     echo "<br/>";
     $customer["CustAge"] = 32;
@@ -108,9 +108,9 @@
 
     echo "<h2>Multi-Dimensional Arrays</h2>";
     $stock = array(
-            array("tshirt", 9.99, 100, array("blue", "green", "red")),
-            array("cap", 4.99, 50, array("blue", "black", "grey")),
-            array("mug", 6.99, 30, array("yellow", "green", "pink"))
+        array("tshirt", 9.99, 100, array("blue", "green", "red")),
+        array("cap", 4.99, 50, array("blue", "black", "grey")),
+        array("mug", 6.99, 30, array("yellow", "green", "pink"))
     );
     echo "This is my order";
     echo "<br/>" . $stock[0][3][1] . " " . $stock[0][0];
@@ -138,12 +138,12 @@
         $shirtPrice = 9.99;
         $counter = 1;
         while ($counter <= 10) {
-            $total=$counter*$shirtPrice;
+            $total = $counter * $shirtPrice;
             echo "<tr>";
-            echo "<td>". $counter . "</td>";
-            echo "<td>". $total . "</td>";
+            echo "<td>" . $counter . "</td>";
+            echo "<td>" . $total . "</td>";
             echo "</tr>";
-            $counter ++;
+            $counter++;
         }
         ?>
     </table>
@@ -155,7 +155,7 @@
 
     echo "Password is: " . $password . "<br/>";
 
-    if (isset($password) && !empty($password)) {
+    if (!empty($password)) {
         if (6 <= strlen($password) and strlen($password) <= 8) {
             if (!is_numeric($password)) {
                 echo "Password OK<br/>";
