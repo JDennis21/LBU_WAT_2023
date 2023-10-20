@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Fundamentals of PHP</title>
-    <link type="text/css" rel="stylesheet" href="../style/main.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/main.css" />
 </head>
 <body>
 <header>
@@ -151,7 +151,7 @@
     <?php
     echo "<h1>Some Useful Functions</h1>";
     $password = htmlentities(trim("password"));
-    $encryptedPassword = md5($password);
+    $encryptedPass = md5($password);
 
     echo "Password is: " . $password . "<br/>";
 
@@ -159,14 +159,14 @@
         if (6 <= strlen($password) and strlen($password) <= 8) {
             if (!is_numeric($password)) {
                 echo "Password OK<br/>";
-                echo "Encrypted Password: " . $encryptedPassword . "<br/>";
+                echo "Encrypted Password: " . $encryptedPass . "<br/>";
             } else echo "Password cannot be a number";
         } else echo "Your password must be between 6 and 8 characters in length";
     } else echo "Please enter a password";
     ?>
 </section>
 <footer>
-    <br/>
+    <br />
     <small> <a href="../html/WatIndex.html">Home</a></small>
 </footer>
 </body>
