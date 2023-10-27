@@ -25,7 +25,7 @@
                     Login
                 </legend>
                 <label for="email">Email: </label>
-                <input type="email" name="txtEmail" id="email" /><br />
+                <input type="text" name="txtEmail" id="email" /><br />
                 <label for="passwd">Password: </label>
                 <input type="password" name="txtPass" id="passwd" /><br />
                 <input type="submit" value="Submit" name="loginSubmit" />
@@ -45,7 +45,7 @@
             <fieldset class="formFit">
                 <legend>Comments</legend>
                 <label for="email1">Email: </label>
-                <input type="email" name="txtEmail1" id="email1" value="<?php
+                <input type="text" name="txtEmail1" id="email1" value="<?php
                 if (isset($_POST["txtEmail1"])) {
                     echo trim($_POST["txtEmail1"]);
                 }
@@ -68,9 +68,9 @@
             $comment = $_POST["txtComment"];
             if (!empty($email && filter_var($email, FILTER_VALIDATE_EMAIL))) {
                 if (isset($_POST["checkbox"])) {
-                    $confirm = 'Agreed<br />';
+                    $confirm = 'Agreed';
                 } else {
-                    $confirm = 'Not Agreed<br />';
+                    $confirm = 'Not Agreed';
                 }
                 echo "Email: " . $email . "<br/>";
                 echo "Comments: " . $comment . "<br/>";
@@ -119,9 +119,15 @@
     </div>
     <h1>Passing Data Appended to a URL</h1>
     <h2>Pick a category</h2>
-    <a href="forms.php">Films</a>
-    <a href=" forms.php">Books</a>
-    <a href=" forms.php">Music</a>
+    <a href="forms.php?genre=film">Films</a>
+    <a href=" forms.php?genre=books">Books</a>
+    <a href=" forms.php?genre=music">Music</a>
+    <?php
+    if (isset($_GET["genre"])) {
+        echo "<strong><br />The category chosen is " . $_GET["genre"] . "</strong>";
+    }
+    ?>
+
     <!-- Fourth Form -->
     <div>
         <h2>Order Form</h2>
@@ -156,13 +162,13 @@
                 Size:
                 <input type="radio" name="pizzaSize" id="small" value="small"
                     <?php if (isset($_POST["pizzaSize"]) && $_POST["pizzaSize"] == "small") echo "checked"; ?>/>
-                <label for="small">small</label>
+                <label for="small">Small</label>
                 <input type="radio" name="pizzaSize" id="medium" value="medium"
                     <?php if (isset($_POST["pizzaSize"]) && $_POST["pizzaSize"] == "medium") echo "checked"; ?>/>
-                <label for="medium">medium</label>
+                <label for="medium">Medium</label>
                 <input type="radio" name="pizzaSize" id="large" value="large"
                     <?php if (isset($_POST["pizzaSize"]) && $_POST["pizzaSize"] == "large") echo "checked"; ?>/>
-                <label for="large">large</label>
+                <label for="large">Large</label>
                 <br />
                 <br />
                 <label for="toppings">Toppings:</label>
@@ -209,7 +215,7 @@
                 echo "Email is required";
             } elseif (!filter_var($pizzaEmail, FILTER_VALIDATE_EMAIL)) {
                 echo "Email is not Valid";
-            } elseif (!isset($_POST["toppings"]) || !isset($_POST["pizzaSize"])) {
+            } elseif ($_POST["toppings"] == "please select" || !isset($_POST["pizzaSize"])) {
                 echo "Must select a size and topping";
             } else {
                 $order = ucfirst($_POST["pizzaSize"]) . " " . ucfirst($_POST["toppings"]);

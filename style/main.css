@@ -38,3 +38,9 @@ body {
 #taxClear{
     margin-right: 60px;
 }
+
+/*mysql.php*/
+#customerDetails{
+    margin-left: 2px;
+    width: 450px;
+}
