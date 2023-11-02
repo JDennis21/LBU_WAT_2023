@@ -9,7 +9,7 @@
     <h1>Josh Dennis C3641149</h1>
 </header>
 <section id="container">
-    <form>
+    <form method="post" action="insertRecord.php">
         <fieldset id="customerDetails">
             <legend>
                 Enter Customer Details
@@ -18,7 +18,7 @@
             <input type="text" name="txtFirst" id="firstName" /> <br />
             <br />
             <label for="surname">Surname: </label>
-            <input type="text" name="txtSurname" id="surname" /> <br />
+            <input type="text" name="txtLast" id="surname" /> <br />
             <br />
             <label for="custEmail">Email: </label>
             <input type="text" name="txtEmail" id="custEmail" /> <br />
@@ -27,11 +27,29 @@
             <input type="text" name="txtPass" id="custPass" /> <br />
             <br />
             <label for="custGender">Gender: </label>
-            <input type="text" name="txtGender" id="custGender" /> <br />
+            <select id="custGender" name="selectGender">
+                <option value="Please Select"
+                    <?php
+                    if (isset($_POST["custGender"]) && $_POST["custGender"] == "please select") echo "selected";
+                    ?>>Please Select
+                </option>
+                <option value="Male"
+                    <?php
+                    if (isset($_POST["custGender"]) && $_POST["custGender"] == "Male") echo "selected";
+                    ?>>Male
+                </option>
+                <option value="Female"
+                    <?php
+                    if (isset($_POST["custGender"]) && $_POST["custGender"] == "Female") echo "selected";
+                    ?>>Female
+                </option>
+            </select> <br />
             <br />
             <label for="custAge">Age: </label>
             <input type="text" name="txtAge" id="custAge" /> <br />
         </fieldset>
+        <input type="submit" name="formSubmit" id="custSubmit" />
+        <input type="reset" value="Clear" name="clear" id="custClear" />
     </form>
 </section>
 <footer>
