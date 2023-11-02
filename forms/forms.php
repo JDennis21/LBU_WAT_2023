@@ -174,16 +174,19 @@
                 <label for="toppings">Toppings:</label>
                 <select id="toppings" name="toppings">
                     <option value="please select"
-                        <?php if (isset($_POST["toppings"]) && $_POST["toppings"] == "please select") echo "selected"; ?>
-                    >Please Select
+                        <?php
+                        if (isset($_POST["toppings"]) && $_POST["toppings"] == "please select") echo "selected";
+                        ?>>Please Select
                     </option>
                     <option value="cheese"
-                        <?php if (isset($_POST["toppings"]) && $_POST["toppings"] == "cheese") echo "selected"; ?>
-                    >Cheese
+                        <?php
+                        if (isset($_POST["toppings"]) && $_POST["toppings"] == "cheese") echo "selected";
+                        ?>>Cheese
                     </option>
                     <option value="pepperoni"
-                        <?php if (isset($_POST["toppings"]) && $_POST["toppings"] == "pepperoni") echo "selected"; ?>
-                    >Pepperoni
+                        <?php
+                        if (isset($_POST["toppings"]) && $_POST["toppings"] == "pepperoni") echo "selected";
+                        ?>>Pepperoni
                     </option>
                 </select>
                 <br />
