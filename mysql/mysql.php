@@ -51,6 +51,9 @@
         <input type="submit" name="formSubmit" id="custSubmit" />
         <input type="reset" value="Clear" name="clear" id="custClear" />
     </form>
+    <?php
+    include 'selectRecord.php';
+    ?>
 </section>
 <footer>
     <br />
