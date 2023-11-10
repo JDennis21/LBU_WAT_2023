@@ -66,3 +66,12 @@ body {
     width: 200px;
     height: 110px;
 }
+
+/*register.php*/
+#regSubmit{
+    margin-left: 2px;
+}
+
+#regConditions{
+    vertical-align: middle;
+}
