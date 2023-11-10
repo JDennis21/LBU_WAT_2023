@@ -15,7 +15,7 @@ $query = "SELECT * FROM product WHERE productID = $prodID;";
 $result = mysqli_query($connection, $query);
 $row = mysqli_fetch_assoc($result);
 ?>
-<form method="post" action="/crud/updateProduct.php">
+<form method="post" action="../crud/updateProduct.php">
     <fieldset class="formFit">
         <legend>
           Enter Product Details

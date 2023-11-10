@@ -1,8 +1,8 @@
 <?php
+echo '<link type="text/css" rel="stylesheet" href="../style/main.css" />';
 //Make connection to database
 include 'connection.php';
 global $connection;
-
 //Display heading
 echo '<h2>Select ALL from the Customer Table</h2>';
 //run query to select all records from customer table

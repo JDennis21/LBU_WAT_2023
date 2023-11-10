@@ -25,8 +25,8 @@ if ($gender != "Please Select") {
         echo "Record inserted successfully.";
     }
 
-    header("location:mysql.php");
+    header("location:/Web_App/mysql/mysql.php");
 } else {
     echo "Error: Must Select a gender<br />";
-    echo '<small> <a href="mysql.php">Return</a></small>';
+    echo '<small> <a href="/mysql/mysql.php">Return</a></small>';
 }

@@ -14,7 +14,7 @@
     include 'displayProducts.php';
     ?>
     <br />
-    <form method="post" action="/crud/insertProduct.php">
+    <form method="post" action="../crud/insertProduct.php">
         <fieldset class="formFit">
             <legend>
                 Enter New Product Details
