@@ -9,7 +9,7 @@
     <h1>Josh Dennis C3641149</h1>
 </header>
 <section id="container">
-    <form method="post" action="/mysql/insertRecord.php">
+    <form method="post" action="../mysql/insertRecord.php">
         <fieldset id="customerDetails">
             <legend>
                 Enter Customer Details

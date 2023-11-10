@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MySQL</title>
+</head>
+<body>
 <?php
 global $connection;
 include 'connection.php';
@@ -17,16 +23,22 @@ if ($gender != "Please Select") {
     }
 
     $query = "INSERT INTO `customer`
-          (`FirstName`, `LastName`, `Email`, `Password`, `Gender`, `Age`) 
+          (`FirsName`, `LastName`, `Email`, `Password`, `Gender`, `Age`) 
           VALUES 
           ('$firstName', '$lastName', '$email', '$password', '$gender', '$age')";
 
-    if (mysqli_query($connection, $query)) {
+    try {
+        mysqli_query($connection, $query);
         echo "Record inserted successfully.";
+    } catch (mysqli_sql_exception $e) {
+        exit("ERROR: Could not execute '$query'. ". mysqli_error($connection));
     }
 
-    header("location:/Web_App/mysql/mysql.php");
 } else {
     echo "Error: Must Select a gender<br />";
-    echo '<small> <a href="/mysql/mysql.php">Return</a></small>';
+    echo '<small><a href="../mysql/mysql.php">Return</a></small>';
 }
+?>
+</body>
+</html>
+
