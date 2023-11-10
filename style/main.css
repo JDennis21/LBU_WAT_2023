@@ -3,6 +3,11 @@ body {
     font-size: 1em;
 }
 
+.formFit{
+    margin-left: 2px;
+    width: fit-content;
+}
+
 /*forms.php*/
 #toppings {
     width: 155px;
@@ -14,11 +19,6 @@ body {
 
 #pizzaEmail {
     width: 140px;
-}
-
-.formFit{
-    margin-left: 2px;
-    width: fit-content;
 }
 
 #orderField1 {
@@ -47,4 +47,22 @@ body {
 
 #custSubmit{
     margin-left: 2px;
+}
+
+/*crud.php*/
+#productForm{
+    margin-left: 395px;
+    width: fit-content;
+}
+
+#displayTableHeader{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.displayTableBody{
+    border: 1px solid black;
+    width: 200px;
+    height: 110px;
 }
