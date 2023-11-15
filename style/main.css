@@ -75,3 +75,8 @@ body {
 #regConditions{
     vertical-align: middle;
 }
+
+.error{
+    color: darkred;
+    font-weight: bold;
+}
