@@ -27,10 +27,9 @@ if ($gender != "Please Select") {
           VALUES 
           ('$firstName', '$lastName', '$email', '$password', '$gender', '$age')";
 
-    try {
-        mysqli_query($connection, $query);
+    if(mysqli_query($connection, $query)) {
         echo "Record inserted successfully.";
-    } catch (mysqli_sql_exception $e) {
+    } else {
         exit("ERROR: Could not execute '$query'. ". mysqli_error($connection));
     }
 

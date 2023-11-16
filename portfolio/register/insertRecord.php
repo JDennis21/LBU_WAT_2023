@@ -91,14 +91,13 @@ if ($check1 && $check2) {
               VALUES 
               ('$username', '$email', '$password', '$age')";
 
-    try {
-        mysqli_query($connection, $query);
+    if(mysqli_query($connection, $query)) {
         $_SESSION["status"] = "$username you have been registered please login";
-        header("location: {$_SERVER['HTTP_REFERER']}");
-    } catch (mysqli_sql_exception) {
-        $_SESSION["status"] = "ERROR: Could not execute '$query'. " . mysqli_error($connection);
-        header("location: {$_SERVER['HTTP_REFERER']}");
+    } else {
+        $_SESSION["status"] = "ERROR: Could not execute query. " . mysqli_error($connection);
     }
+    header("location: {$_SERVER['HTTP_REFERER']}");
+
 } else {
     $_SESSION["status"] = "<span class='error'>*Could not complete registration</span>";
     header("location: {$_SERVER['HTTP_REFERER']}");
