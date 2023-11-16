@@ -16,6 +16,7 @@ if (isset($_SESSION['user'])) {
 } else {
     include "loginForm.php";
 }
+$_SESSION = array();
 ?>
 </body>
 </html>

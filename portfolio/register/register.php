@@ -62,7 +62,7 @@ include "connection.php";
             </select>
             <span class="error"><?php if (isset($_SESSION["ageErr"]))echo "*" . $_SESSION["ageErr"];?></span>
             <br /><br />
-            <input type="checkbox" name="checkConditions" id="regConditions" value="checked"
+            <input type="checkbox" name="checkConditions" id="regConditions" value="checkbox"
                 <?php if (isset($_SESSION["conditions"]))echo "checked";?> />
             <label for="regConditions">Terms and Conditions</label>
             <span class="error"><?php if (isset($_SESSION["termsErr"]))echo "*" . $_SESSION["termsErr"];?></span>

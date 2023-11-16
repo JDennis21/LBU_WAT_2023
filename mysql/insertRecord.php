@@ -23,7 +23,7 @@ if ($gender != "Please Select") {
     }
 
     $query = "INSERT INTO `customer`
-          (`FirsName`, `LastName`, `Email`, `Password`, `Gender`, `Age`) 
+          (`FirstName`, `LastName`, `Email`, `Password`, `Gender`, `Age`) 
           VALUES 
           ('$firstName', '$lastName', '$email', '$password', '$gender', '$age')";
 

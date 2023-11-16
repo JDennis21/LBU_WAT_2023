@@ -78,8 +78,10 @@ function checkConditions(): bool
     return $valid;
 }
 
-if (checkConditions() || checkNotEmpty()) {
-    $username = $connection -> real_escape_string(stripcslashes(trim($_POST["txtUserName"])));
+$check1 = checkConditions();
+$check2 = checkNotEmpty();
+if ($check1 && $check2) {
+    $username = $connection -> real_escape_string(stripcslashes(trim($_POST["txtUsername"])));
     $email = $connection -> real_escape_string(stripcslashes(trim($_POST["txtEmail"])));
     $password = $connection -> real_escape_string(md5(stripcslashes(trim($_POST["txtPass"]))));
     $age = $connection ->real_escape_string($_POST["selectAge"]);
