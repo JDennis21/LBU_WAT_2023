@@ -10,6 +10,7 @@ $query = "INSERT INTO `stock`
           (`stockItem`, `stockPrice`, `stockQuantity`) 
           VALUES 
           ('$stockItem', '$stockPrice', '$stockQuantity')";
+
 mysqli_query($connection, $query);
 
-header("location:/Web_App/practiceTest/watJoshDennis.php");
+header("location: ../practiceTest/watJoshDennis.php");

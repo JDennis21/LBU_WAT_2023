@@ -16,7 +16,7 @@
 */
 ?>
 <h1>Work with databases </h1>
-<form method="post" action="addStock.php">
+<form method="post" action="../practiceTest/addStock.php">
     <label for="stockItem">Item:</label>
     <input type="text" name="txtStockItem" id="stockItem" />
     <label for="stockQuantity">Stock:</label>
