@@ -12,7 +12,13 @@ global $connection;
 $prodID = $_GET["id"];
 
 $query = "SELECT * FROM product WHERE productID = $prodID;";
-$result = mysqli_query($connection, $query);
+
+try {
+    $result = mysqli_query($connection, $query);
+    echo "Record inserted successfully.";
+} catch (mysqli_sql_exception $e) {
+    exit("ERROR: Could not execute '$query'. ". mysqli_error($connection));
+}
 $row = mysqli_fetch_assoc($result);
 ?>
 <form method="post" action="../crud/updateProduct.php">

@@ -9,7 +9,13 @@ if (isset($_POST["productSubmit"])) {
 
     $query = "INSERT INTO `product` (`productName`, `productPrice`, `productImageName`) 
               VALUES ('$productName', '$productPrice', '$productImageName')";
-    mysqli_query($connection, $query);
+
+    try {
+        mysqli_query($connection, $query);
+        echo "Record inserted successfully.";
+    } catch (mysqli_sql_exception $e) {
+        exit("ERROR: Could not execute '$query'. ". mysqli_error($connection));
+    }
 }
 
 header("Location: {$_SERVER['HTTP_REFERER']}");
