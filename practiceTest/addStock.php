@@ -13,4 +13,4 @@ $query = "INSERT INTO `stock`
 
 mysqli_query($connection, $query);
 
-header("location: ../practiceTest/watJoshDennis.php");
+header("location: ../practiceTest/WATjoshDennis.php");
