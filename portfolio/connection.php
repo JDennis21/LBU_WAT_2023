@@ -11,4 +11,6 @@ try {
     $connection = exit("unable to connect to database!");
 }
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
