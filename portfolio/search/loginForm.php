@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Login Form</title>
-    <link type="text/css" rel="stylesheet" href="../../style/main.css" />
-</head>
 <body>
 <h3>Login</h3>
 <form method="post" action="../search/login.php">

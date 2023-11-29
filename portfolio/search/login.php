@@ -1,6 +1,5 @@
 <?php
-//include init.php
-include 'connection.php';
+include '../connection.php';
 global $connection;
 
 $username = $_POST["txtUser"];

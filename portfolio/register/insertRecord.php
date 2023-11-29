@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Register</title>
-    <link type="text/css" rel="stylesheet" href="../../style/main.css" />
-</head>
-<header>
-    <h1>Josh Dennis c3641149</h1>
-</header>
-<body>
 <?php
-include 'connection.php';
+include '../connection.php';
 global $connection;
 
 function trimString($string): string
@@ -102,7 +92,3 @@ if ($check1 && $check2) {
     $_SESSION["status"] = "<span class='error'>*Could not complete registration</span>";
     header("location: {$_SERVER['HTTP_REFERER']}");
 }
-
-?>
-</body>
-</html>

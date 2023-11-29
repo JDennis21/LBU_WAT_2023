@@ -1,3 +1,4 @@
+<?php include_once "../connection.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +9,6 @@
     <h1>Josh Dennis c3641149</h1>
 </header>
 <body>
-<?php
-include "connection.php";
-?>
 <div>
     <h2>Register</h2>
     <form method="post" action="/portfolio/register/insertRecord.php">

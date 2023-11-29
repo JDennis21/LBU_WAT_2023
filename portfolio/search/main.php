@@ -1,3 +1,10 @@
+<?php
+include '../connection.php';
+if (isset($_SESSION['user'])) {
+    header("location: protected.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +16,11 @@
 </header>
 <body>
 <?php
-include '../connection.php';
-global $connection;
+include "loginForm.php";
 
-if (isset($_SESSION['user'])) {
-    header('location: ../search/displayProduct.php');
-} else if (isset($_SESSION['error'])) {
-    include "loginForm.php";
+if (isset($_SESSION['error'])) {
     echo "<br />" . $_SESSION["error"];
-} else {
-    include "loginForm.php";
 }
-
 $_SESSION = array();
 ?>
 </body>
