@@ -67,6 +67,8 @@ if (mysqli_num_rows($result) > 0){
     }
     echo
     '</table>';
+} else {
+    echo "<h3>No results to display</h3>";
 }
 ?>
 </body>
