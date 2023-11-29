@@ -80,3 +80,30 @@ body {
     color: darkred;
     font-weight: bold;
 }
+
+/*search.php*/
+.searchTable{
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: thin solid black
+}
+
+.searchTable thead tr{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: blueviolet;
+    color: #ffffff;
+}
+
+.searchTable th, td {
+    padding: 12px 15px;
+}
+
+.searchTable tbody td{
+    border: thin solid black;
+    width: 150px;
+    height: 100px;
+}
