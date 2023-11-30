@@ -9,5 +9,11 @@
     <input type="password" name="txtPass" id="txtPass" />
     <input type="submit" name="subLogin" value="submit" />
 </form>
+<?php
+if (isset($_SESSION['error'])) {
+    echo "<br />" . $_SESSION["error"];
+}
+$_SESSION = array();
+?>
 </body>
 </html>

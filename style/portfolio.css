@@ -59,6 +59,8 @@ header, #content, #sidebar, nav {
     margin-left: 0;
     padding-left: 0;
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
 }
 
 #navlist a {

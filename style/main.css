@@ -85,9 +85,9 @@ body {
 .searchTable{
     border-collapse: collapse;
     margin: 25px 0;
-    min-width: 400px;
+    width: 60%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border: thin solid black
+    border: thin solid black;
 }
 
 .searchTable thead tr{
@@ -98,12 +98,19 @@ body {
     color: #ffffff;
 }
 
-.searchTable th, td {
+.searchTable th,
+.searchTable td{
     padding: 12px 15px;
 }
 
 .searchTable tbody td{
     border: thin solid black;
-    width: 150px;
+    width: 25%;
     height: 100px;
+}
+
+#searchImg{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }

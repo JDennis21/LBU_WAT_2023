@@ -41,3 +41,6 @@ li{
     margin: 15px;
     float: left;
 }
+.colum{
+    display: inline-block;
+}

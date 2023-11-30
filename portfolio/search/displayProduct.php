@@ -66,8 +66,12 @@ if (mysqli_num_rows($result) > 0){
                     <td><?php echo $row['prodName']?></td>
                     <td><?php echo $row['RoundedPrice']?></td>
                     <td><?php echo $row['prodCat']?></td>
-                    <td><?php echo "<img src= ../../images/$imageURL height='100' width='100' 
-                    alt=" . $row['prodName'] . "/>"?></td>
+                    <td>
+                        <div id="searchImg">
+                        <?php echo "<img src= ../../images/$imageURL height='100' width='100' 
+                        alt=" . $row['prodName'] . "/>"?>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         <?php

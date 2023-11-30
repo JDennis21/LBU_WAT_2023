@@ -8,7 +8,7 @@
 <?php
 session_start();
 session_destroy();
-header("location: /Web_App/sessions/sessions.php");
+header("location: ../sessions/sessions.php");
 ?>
 </body>
 </html>

@@ -8,10 +8,10 @@
 <?php
 include 'init.php';
 if (!isset($_SESSION['user'])) {
-    header("/Web_App/sessions/sessions.php");
+    header("../sessions/sessions.php");
 }
 ?>
 <p>Any page content that you want to protect can be placed here</p>
-<a href="../sessions/logout.php">Logout Page</a>
+<a href="logout.php">Logout Page</a>
 </body>
 </html>
