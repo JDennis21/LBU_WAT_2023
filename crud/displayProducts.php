@@ -13,27 +13,39 @@ $query = "SELECT * FROM product;";
 $result = mysqli_query($connection, $query);
 ?>
 
-<table class="displayTable">
-    <tr id="displayTableHeader">
-        <td>Product Name</td>
-        <td>Price</td>
-        <td>Image</td>
-        <td>Amend</td>
-        <td>Delete</td>
-    </tr>
+<table class="crudTable">
+    <thead>
+        <tr>
+            <td>Product Name</td>
+            <td>Price</td>
+            <td>Image</td>
+            <td>Amend</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
     <?php
     while ($row = mysqli_fetch_assoc($result)) {
         $imageURL = $row['productImageName'];
-        echo "<tr>";
-        echo "<td class='displayTableBody'>" . $row['productName'] . "</td>";
-        echo "<td class='displayTableBody'>" . $row['productPrice'] . "</td>";
-        echo "<td class='displayTableBody'>" . "<img src= ../images/$imageURL height='100' width='100' 
-        alt=" . $row['productName'] . " />" . "</td>";
-        echo "<td class='displayTableBody'>" .
-            '<a href="../crud/amendProduct.php?id=' . $row['productID'] . '">Amend</a>' . "</td>";
-        echo "<td class='displayTableBody'>" .
-            '<a href="../crud/deleteProduct.php?id=' . $row['productID'] . '">Delete</a>' . "</td>";
-        echo "</tr>";
+        ?>
+        <tbody>
+            <tr>
+                <td><?php echo $row['productName'] ?></td>
+                <td><?php echo $row['productPrice'] ?></td>
+                <td>
+                    <div class="crudImg">
+                        <img src="../images/<?php echo $imageURL ?>" height='100' width='100'
+                              alt='<?php echo $row['productName'] ?>' />
+                    </div>
+                </td>
+                <td>
+                    <a href="../crud/amendProduct.php?id='<?php echo $row['productID'] ?>'">Amend</a>
+                </td>
+                <td>
+                    <a href="../crud/deleteProduct.php?id='<?php echo $row['productID'] ?>'">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+        <?php
     }
     ?>
 </table>
