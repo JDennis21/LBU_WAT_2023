@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +19,7 @@
 
     <!-- First Form -->
     <div>
-        <form method="get" action="forms.php">
+        <form method="post" action="../forms/forms.php">
             <fieldset class="formFit">
                 <legend>
                     Login
@@ -28,15 +33,15 @@
             </fieldset>
         </form>
         <?php
-        if (isset($_GET["loginSubmit"])) {
-            echo "Email: " . $_GET["txtEmail"] . " Password: " . $_GET["txtPass"];
+        if (isset($_POST["loginSubmit"])) {
+            echo "Email: " . $_POST["txtEmail"] . " Password: " . $_POST["txtPass"];
         }
         ?>
     </div>
 
     <!-- Second Form -->
     <div>
-        <form method="post" action="forms.php">
+        <form method="post" action="../forms/forms.php">
             <fieldset class="formFit">
                 <legend>Comments</legend>
                 <label for="email1">Email: </label>
@@ -101,10 +106,10 @@
         if (isset($_POST["taxSubmit"]))
             if (!isset($_POST["txtAfterTax"]) || !isset($_POST["txtTaxRate"])) {
                 echo "<br />All fields required";
-            } elseif(!filter_var($_POST["txtAfterTax"],FILTER_VALIDATE_FLOAT)
-            || !preg_match('/^[0-9]+\.[0-9]{2}$/', $_POST["txtAfterTax"])) {
+            } elseif (!filter_var($_POST["txtAfterTax"], FILTER_VALIDATE_FLOAT)
+                || !preg_match('/^[0-9]+\.[0-9]{2}$/', $_POST["txtAfterTax"])) {
                 echo "<br />Please enter the price in the format 9.99";
-            } elseif(!filter_var($_POST["txtTaxRate"],FILTER_VALIDATE_INT)) {
+            } elseif (!filter_var($_POST["txtTaxRate"], FILTER_VALIDATE_INT)) {
                 echo "<br />Tax rate must be a whole number";
             } else {
                 $beforePrice = (100 * $_POST["txtAfterTax"]) / (100 + $_POST["txtTaxRate"]);
@@ -114,9 +119,9 @@
     </div>
     <h1>Passing Data Appended to a URL</h1>
     <h2>Pick a category</h2>
-    <a href="forms.php?genre=film">Films</a>
-    <a href=" forms.php?genre=books">Books</a>
-    <a href=" forms.php?genre=music">Music</a>
+    <a href="../forms/forms.php?genre=film">Films</a>
+    <a href=" ../forms/forms.php?genre=books">Books</a>
+    <a href=" ../forms/forms.php?genre=music">Music</a>
     <?php
     if (isset($_GET["genre"])) {
         echo "<strong><br />The category chosen is " . $_GET["genre"] . "</strong>";
@@ -136,7 +141,7 @@
 
         if (isset($_POST["clear"])) clearVariables();
         ?>
-        <form method="post" action="forms.php">
+        <form method="post" action="../forms/forms.php">
             <fieldset id="orderField1">
                 <legend>
                     Enter your login details

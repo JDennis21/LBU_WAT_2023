@@ -33,13 +33,13 @@ if (isset($_POST["prodClear"])) {
                 <?php
                 if (isset($_POST["sortRadio"]) && $_POST["sortRadio"] == "a-z") {
                     echo "checked";
-                }?>/>
+                } ?>/>
             <label for="sortRadio">A-Z</label>
             <input type="radio" name="sortRadio" id="sortRadio2" value="price"
                 <?php
                 if (isset($_POST["sortRadio"]) && $_POST["sortRadio"] == "price") {
                     echo "checked";
-                }?>/>
+                } ?>/>
             <label for="sortRadio2">Price</label>
             <br /><br />
             <label for="selectSort">Type:</label>
@@ -51,14 +51,14 @@ if (isset($_POST["prodClear"])) {
                 </option>
                 <?php
                 $query = "SELECT DISTINCT prodCat FROM search;";
-                $result = mysqli_query($connection,$query);
+                $result = mysqli_query($connection, $query);
                 while ($row = mysqli_fetch_assoc($result)) {
                     $cat = $row["prodCat"];
                     ?>
-                    <option value='<?php echo $cat?>'
+                    <option value='<?php echo $cat ?>'
                         <?php
                         if (isset($_POST["selectSort"]) && $_POST["selectSort"] == "$cat") echo "selected";
-                        ?>><?php echo $cat?>
+                        ?>><?php echo $cat ?>
                     </option>
                     <?php
                 }
@@ -67,7 +67,7 @@ if (isset($_POST["prodClear"])) {
             <br /><br />
             <label for="textSort">Search:</label>
             <input type="text" name="textSort" id="textSort"
-                   value="<?php if (isset($_POST["textSort"])) echo trim($_POST["textSort"]);?>"/>
+                   value="<?php if (isset($_POST["textSort"])) echo trim($_POST["textSort"]); ?>" />
             <br /><br />
         </fieldset>
         <input type="submit" name="prodSubmit" id="prodSubmit" />
@@ -79,6 +79,6 @@ if (isset($_POST["prodClear"])) {
 include 'displayProduct.php';
 unset($_POST["prodSubmit"]);
 ?>
-<a href="../search/logout.php" >Logout</a>
+<a href="../search/logout.php">Logout</a>
 </body>
 </html>

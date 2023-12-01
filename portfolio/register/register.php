@@ -20,18 +20,18 @@
             <br />
             <input type="text" name="txtUsername" id="regUser"
                    value="<?php if (isset($_SESSION["username"])) echo $_SESSION["username"]; ?>" />
-            <span class="error"><?php if (isset($_SESSION["nameErr"]))echo "*" . $_SESSION["nameErr"];?></span>
+            <span class="error"><?php if (isset($_SESSION["nameErr"])) echo "*" . $_SESSION["nameErr"]; ?></span>
             <br />
             <label for="regEmail">Email: </label>
             <br />
             <input type="text" name="txtEmail" id="regEmail"
-                   value="<?php if (isset($_SESSION["email"])) echo $_SESSION["email"]; ?>"/>
-            <span class="error"><?php if (isset($_SESSION["emailErr"]))echo "*" . $_SESSION["emailErr"];?></span>
+                   value="<?php if (isset($_SESSION["email"])) echo $_SESSION["email"]; ?>" />
+            <span class="error"><?php if (isset($_SESSION["emailErr"])) echo "*" . $_SESSION["emailErr"]; ?></span>
             <br />
             <label for="regPass">Password: </label>
             <br />
             <input type="password" name="txtPass" id="regPass" />
-            <span class="error"><?php if (isset($_SESSION["passErr"]))echo "*" . $_SESSION["passErr"];?></span>
+            <span class="error"><?php if (isset($_SESSION["passErr"])) echo "*" . $_SESSION["passErr"]; ?></span>
             <br /><br />
             <label for="regAge">Age: </label>
             <br />
@@ -58,12 +58,12 @@
                     ?>>Over 60
                 </option>
             </select>
-            <span class="error"><?php if (isset($_SESSION["ageErr"]))echo "*" . $_SESSION["ageErr"];?></span>
+            <span class="error"><?php if (isset($_SESSION["ageErr"])) echo "*" . $_SESSION["ageErr"]; ?></span>
             <br /><br />
             <input type="checkbox" name="checkConditions" id="regConditions" value="checkbox"
-                <?php if (isset($_SESSION["conditions"]))echo "checked";?> />
+                <?php if (isset($_SESSION["conditions"])) echo "checked"; ?> />
             <label for="regConditions">Terms and Conditions</label>
-            <span class="error"><?php if (isset($_SESSION["termsErr"]))echo "*" . $_SESSION["termsErr"];?></span>
+            <span class="error"><?php if (isset($_SESSION["termsErr"])) echo "*" . $_SESSION["termsErr"]; ?></span>
         </fieldset>
         <input type="submit" name="regSubmit" id="regSubmit" />
     </form>

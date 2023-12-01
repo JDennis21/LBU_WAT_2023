@@ -12,10 +12,8 @@ if (isset($_POST["productSubmit"])) {
 
     try {
         mysqli_query($connection, $query);
-        echo "Record inserted successfully.";
+        header("Location: {$_SERVER['HTTP_REFERER']}");
     } catch (mysqli_sql_exception $e) {
-        exit("ERROR: Could not execute '$query'. ". mysqli_error($connection));
+        exit("ERROR: Could not execute '$query'. " . mysqli_error($connection));
     }
 }
-
-header("Location: {$_SERVER['HTTP_REFERER']}");

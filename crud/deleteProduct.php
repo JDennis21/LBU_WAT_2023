@@ -13,5 +13,5 @@ if (mysqli_affected_rows($connection) > 0) {
 } else {
 // print error message
     echo "Error in query: $query. " . mysqli_error($connection);
-    exit ;
+    exit;
 }

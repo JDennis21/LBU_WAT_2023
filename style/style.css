@@ -1,21 +1,25 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 25px;
 }
-#selector{
+
+#selector {
     letter-spacing: -0.2rem;
     font-weight: 800;
 }
-.spaced{
+
+.spaced {
     color: blueviolet;
     letter-spacing: 1em;
 }
-ul{
+
+ul {
     list-style: none;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-li{
+
+li {
     display: inline;
     background-color: grey;
     padding: 20px;
@@ -23,24 +27,28 @@ li{
     margin: 65px;
     text-align: center;
 }
-.col1{
+
+.col1 {
     border: 3px solid green;
     padding: 20px 65px 20px 20px;
     margin: 15px;
     float: left;
 }
-.col2{
+
+.col2 {
     border: 3px solid green;
     padding: 20px 410px 20px 20px;
     margin: 15px 15px 15px 35px;
     float: left;
 }
-.col3{
+
+.col3 {
     border: 3px solid green;
     padding: 20px 210px 20px 20px;
     margin: 15px;
     float: left;
 }
-.colum{
+
+.colum {
     display: inline-block;
 }

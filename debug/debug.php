@@ -4,7 +4,7 @@ include 'showErrors.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link type="text/css" rel="stylesheet" href=""/>
+    <link type="text/css" rel="stylesheet" href="" />
     <title>Result</title>
 </head>
 <body>

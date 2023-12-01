@@ -1,3 +1,7 @@
+<?php
+global $connection;
+include 'connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +9,6 @@
 </head>
 <body>
 <?php
-global $connection;
-include 'connection.php';
-
 $firstName = $_POST["txtFirst"];
 $lastName = $_POST["txtLast"];
 $email = $_POST["txtEmail"];
@@ -31,7 +32,7 @@ if ($gender != "Please Select") {
         mysqli_query($connection, $query);
         echo "Record inserted successfully.";
     } catch (mysqli_sql_exception $e) {
-        exit("ERROR: Could not execute '$query'. ". mysqli_error($connection));
+        exit("ERROR: Could not execute '$query'. " . mysqli_error($connection));
     }
 
 } else {

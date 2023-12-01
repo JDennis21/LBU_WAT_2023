@@ -52,7 +52,7 @@ function checkConditions(): bool
         $_SESSION["nameErr"] = "Username must be greater than 6 characters";
         $valid = false;
     }
-    if (!preg_match("/^[a-zA-Z0-9]*$/",$username)) {
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $_SESSION["nameErr"] = "No special characters allowed";
         $valid = false;
     }
@@ -71,17 +71,17 @@ function checkConditions(): bool
 $check1 = checkConditions();
 $check2 = checkNotEmpty();
 if ($check1 && $check2) {
-    $username = $connection -> real_escape_string(stripcslashes(trim($_POST["txtUsername"])));
-    $email = $connection -> real_escape_string(stripcslashes(trim($_POST["txtEmail"])));
-    $password = $connection -> real_escape_string(md5(stripcslashes(trim($_POST["txtPass"]))));
-    $age = $connection ->real_escape_string($_POST["selectAge"]);
+    $username = $connection->real_escape_string(stripcslashes(trim($_POST["txtUsername"])));
+    $email = $connection->real_escape_string(stripcslashes(trim($_POST["txtEmail"])));
+    $password = $connection->real_escape_string(md5(stripcslashes(trim($_POST["txtPass"]))));
+    $age = $connection->real_escape_string($_POST["selectAge"]);
 
     $query = "INSERT INTO `register`
               (`regUser`, `regEmail`, `regPass`, `regAge`) 
               VALUES 
               ('$username', '$email', '$password', '$age')";
 
-    if(mysqli_query($connection, $query)) {
+    if (mysqli_query($connection, $query)) {
         $_SESSION["status"] = "$username you have been registered please login";
     } else {
         $_SESSION["status"] = "ERROR: Could not execute query. " . mysqli_error($connection);

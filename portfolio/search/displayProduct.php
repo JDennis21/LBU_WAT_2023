@@ -46,39 +46,39 @@ if (isset($_POST["prodSubmit"])) {
 
 $result = mysqli_query($connection, $query);
 
-if (mysqli_num_rows($result) > 0){
+if (mysqli_num_rows($result) > 0) {
     ?>
     <table class="searchTable">
         <thead>
-            <tr>
-                <td>Product Name</td>
-                <td>Price</td>
-                <td>Category</td>
-                <td>Image</td>
-            </tr>
+        <tr>
+            <td>Product Name</td>
+            <td>Price</td>
+            <td>Category</td>
+            <td>Image</td>
+        </tr>
         </thead>
         <?php
         while ($row = mysqli_fetch_assoc($result)) {
             $imageURL = $row['prodImage'];
             ?>
             <tbody>
-                <tr>
-                    <td><?php echo $row['prodName']?></td>
-                    <td><?php echo $row['RoundedPrice']?></td>
-                    <td><?php echo $row['prodCat']?></td>
-                    <td>
-                        <div id="searchImg">
+            <tr>
+                <td><?php echo $row['prodName'] ?></td>
+                <td><?php echo $row['RoundedPrice'] ?></td>
+                <td><?php echo $row['prodCat'] ?></td>
+                <td>
+                    <div id="searchImg">
                         <?php echo "<img src= ../../images/$imageURL height='100' width='100' 
-                        alt=" . $row['prodName'] . "/>"?>
-                        </div>
-                    </td>
-                </tr>
+                        alt=" . $row['prodName'] . "/>" ?>
+                    </div>
+                </td>
+            </tr>
             </tbody>
-        <?php
+            <?php
         }
         ?>
     </table>
-<?php
+    <?php
 } else {
     echo "<h3>No results to display</h3>";
 }

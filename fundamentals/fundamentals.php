@@ -11,7 +11,6 @@
 <section id="container">
     <h1>Fundamentals of PHP</h1>
     <h2>Selection</h2>
-
     <!-- Date -->
     <?php
     $day = date('l'); //that is a lower case L
@@ -139,14 +138,42 @@
         $counter = 1;
         while ($counter <= 10) {
             $total = $counter * $shirtPrice;
-            echo "<tr>";
-            echo "<td>" . $counter . "</td>";
-            echo "<td>" . $total . "</td>";
-            echo "</tr>";
+            ?>
+            <tr>
+                <td><?php echo $counter ?></td>
+                <td><?php echo $total ?></td>
+            </tr>
+            <?php
             $counter++;
         }
         ?>
     </table>
+    <!-- For Loops -->
+    <?php
+    echo "<h2>For Loops</h2>";
+    $names = array("peter", "Kat", "Laura", "Ali", "Popacatapetal");
+    for ($i = 0; $i < 5; $i++) {
+        echo $names[$i] . "<br />";
+    }
+    ?>
+    <!-- For Each Loops -->
+    <?php
+    echo "<h2>Foreach Loops</h2>";
+    $names = array("peter" => "c123456", "Kat" => "c456789", "Laura" => "c253485", "Ali" => "c217953",
+        "Popacatapetal" => "c435832");
+    foreach ($names as $name => $id) {
+        echo "Name: $name ID: $id<br />";
+    }
+    echo "<br />";
+    $city = array('Peter' => 'LEEDS', 'Kat' => 'bradford', 'Laura' => 'wakeFIeld');
+    print_r($city);
+    foreach ($city as $name => $value) {
+        $newCity = ucfirst(strtolower($value));
+        $city[$name] = $newCity;
+    }
+    echo "<br />";
+    print_r($city);
+    ?>
     <!-- Extension Passwords -->
     <?php
     echo "<h1>Some Useful Functions</h1>";
@@ -155,7 +182,7 @@
 
     echo "Password is: " . $password . "<br/>";
 
-    if (!empty($password)) {
+    if (isset($password) && !empty($password)) {
         if (6 <= strlen($password) and strlen($password) <= 8) {
             if (!is_numeric($password)) {
                 echo "Password OK<br/>";

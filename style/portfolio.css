@@ -116,18 +116,22 @@ MEDIA QUERIES
         width: auto;
         float: none;
     }
+
     #sidebar {
         width: auto;
         float: none;
     }
+
     #navlist li {
         display: block;
         margin: 10px;
     }
+
     #navlist a {
         padding: 3px 10px;
         border: solid 1px #ccc;
     }
+
     #navlist a:link, #navlist a:visited {
         display: block;
         margin-left: auto;
@@ -142,12 +146,15 @@ MEDIA QUERIES
     header {
         height: auto;
     }
+
     h1 {
         font-size: 24px;
     }
+
     #sidebar {
         display: none;
     }
+
     footer {
         display: none;
     }

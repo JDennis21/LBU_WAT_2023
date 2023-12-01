@@ -35,11 +35,11 @@ Any spend over £50 is subject to a 10% discount on Monday.  Declare a variable 
 $spend = 65;
 $day = "Mon";
 
-if($spend > 50 && $day == "Mon") {
+if ($spend > 50 && $day == "Mon") {
     echo "Discount applies";
 } elseif ($spend < 50 && $day == "Mon") {
     echo "Spend not over £50. No Discount";
-} elseif($day != "Mon" && $spend > 50) {
+} elseif ($day != "Mon" && $spend > 50) {
     echo "Not Monday.  No discount";
 } else {
     echo "Less than £50 and not Monday.  No discount";
@@ -127,7 +127,9 @@ For more extra marks add validation and provide error messages if the text box i
 <form method="post" action="../WATc3641149/WATjoshDennis.php">
     <label for="annualSal">Annual Salary:</label>
     <input type="text" name="txtSalary" id="annualSal"
-           value="<?php if(isset($_POST['subSalary'])) {echo $_POST['txtSalary'];} ?>">
+           value="<?php if (isset($_POST['subSalary'])) {
+               echo $_POST['txtSalary'];
+           } ?>">
     <input type="submit" value="Submit" name="subSalary">
 </form>
 <br />
@@ -139,9 +141,9 @@ if (isset($_POST["subSalary"])) {
         echo "Must enter annual salary";
     } elseif (!is_numeric($_POST["txtSalary"])) {
         echo "Must enter a number";
-    } elseif(intval($_POST["txtSalary"]) < 1) {
+    } elseif (intval($_POST["txtSalary"]) < 1) {
         echo "Must input a value greater than 1";
-    }else {
+    } else {
         $annualSalary = $_POST["txtSalary"];
         $monthlySalary = intval($annualSalary) / 12;
         $taxable = $monthlySalary - 2274;
