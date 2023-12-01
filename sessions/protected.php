@@ -1,7 +1,7 @@
 <?php
 include 'init.php';
 if (!isset($_SESSION['user'])) {
-    header("../sessions/sessions.php");
+    header("location: ../sessions/sessions.php");
 }
 ?>
 <!DOCTYPE html>

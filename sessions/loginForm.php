@@ -6,7 +6,7 @@
 </head>
 <body>
 <h3>Login</h3>
-<form method="post" action="/sessions/login.php">
+<form method="post" action="../sessions/login.php">
     <label for="txtUser"></label>
     <input type="text" name="txtUser" id="txtUser" value='' />
     <label for="txtPass"></label>
