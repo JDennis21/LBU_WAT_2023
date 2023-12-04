@@ -13,7 +13,6 @@
 if (isset($_SESSION['error'])) {
     echo "<br />" . $_SESSION["error"];
 }
-$_SESSION = array();
 ?>
 </body>
 </html>

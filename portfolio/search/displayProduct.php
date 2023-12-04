@@ -7,46 +7,39 @@ global $connection;
 <body>
 <?php
 
-//SELECT * FROM search where prodCat = 'Clothing' and prodName like '%C%' ORDER BY prodName
-
-$query = "SELECT *, prodPrice, ROUND(prodPrice, 2) AS RoundedPrice FROM search";
+$query = "SELECT *, prodPrice, ROUND(prodPrice, 2) AS RoundedPrice FROM search WHERE 1";
 
 if (isset($_POST["prodSubmit"])) {
     $count = 0;
-    $queryAdditions = "";
-    if ($_POST["selectSort"] != "all" || !empty($_POST["textSort"])) {
-        $queryAdditions = " WHERE";
-    }
-    if (isset($_POST["selectSort"]) && $_POST["selectSort"] != "all") {
-        $count += 1;
+    $params = array();
+
+    if ($_POST["selectSort"] != "all") {
         $cat = $_POST["selectSort"];
-        $queryAdditions .= " prodCat = '$cat'";
+        $query .= " and prodCat = '$cat'";
     }
     if (!empty($_POST["textSort"])) {
-        $count += 1;
         $text = $_POST["textSort"];
-        if ($count > 1) {
-            $queryAdditions .= " and prodName like '%$text%'";
-        } else {
-            $queryAdditions .= " prodName like '%$text%'";
-        }
+        $query .= " and prodName like ?";
+        $params = array("s", '%' . $text . '%');
     }
     if (isset($_POST["sortRadio"])) {
-        $count += 1;
+        $query .= " ORDER BY";
         if ($_POST["sortRadio"] == "a-z") {
-            $queryAdditions .= " ORDER BY prodName";
+            $query .= " prodName";
         } else {
-            $queryAdditions .= " ORDER BY prodPrice";
+            $query .= " prodPrice";
         }
-    }
-    if ($count > 0) {
-        $query .= $queryAdditions;
     }
 }
 
-$result = mysqli_query($connection, $query);
+$stmt = $connection->prepare($query);
+if (!empty($params)) {
+    $stmt->bind_param($params[0], $params[1]);
+}
+$stmt->execute();
+$result = $stmt->get_result();
 
-if (mysqli_num_rows($result) > 0) {
+if ($result->num_rows > 0) {
     ?>
     <table class="searchTable">
         <thead>
@@ -79,6 +72,7 @@ if (mysqli_num_rows($result) > 0) {
         ?>
     </table>
     <?php
+    $stmt->close();
 } else {
     echo "<h3>No results to display</h3>";
 }

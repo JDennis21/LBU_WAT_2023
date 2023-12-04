@@ -10,6 +10,7 @@ function trimString($string): string
 $_SESSION["username"] = trimString($_POST["txtUsername"]);
 $_SESSION["email"] = trimString($_POST["txtEmail"]);
 $_SESSION["age"] = trimString($_POST["selectAge"]);
+
 if (isset($_POST["checkConditions"])) {
     $_SESSION["conditions"] = trimString($_POST["checkConditions"]);
 }
@@ -71,24 +72,26 @@ function checkConditions(): bool
 $check1 = checkConditions();
 $check2 = checkNotEmpty();
 if ($check1 && $check2) {
-    $username = $connection->real_escape_string(stripcslashes(trim($_POST["txtUsername"])));
-    $email = $connection->real_escape_string(stripcslashes(trim($_POST["txtEmail"])));
-    $password = $connection->real_escape_string(md5(stripcslashes(trim($_POST["txtPass"]))));
-    $age = $connection->real_escape_string($_POST["selectAge"]);
+    $username = trim($_POST["txtUsername"]);
+    $email = trim($_POST["txtEmail"]);
+    $password = md5(trim($_POST["txtPass"]));
+    $age = trim($_POST["selectAge"]);
 
     $query = "INSERT INTO `register`
               (`regUser`, `regEmail`, `regPass`, `regAge`) 
               VALUES 
-              ('$username', '$email', '$password', '$age')";
+              (?, ?, ?, ?)";
 
-    if (mysqli_query($connection, $query)) {
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("ssss", $username, $email, $password, $age);
+
+    if ($stmt->execute()) {
         $_SESSION["status"] = "$username you have been registered please login";
     } else {
-        $_SESSION["status"] = "ERROR: Could not execute query. " . mysqli_error($connection);
+        $_SESSION["status"] = "ERROR: Could not execute query. " . $connection->error;
     }
-    header("location: {$_SERVER['HTTP_REFERER']}");
-
+    $stmt->close();
 } else {
     $_SESSION["status"] = "<span class='error'>*Could not complete registration</span>";
-    header("location: {$_SERVER['HTTP_REFERER']}");
 }
+header("location: {$_SERVER['HTTP_REFERER']}");
