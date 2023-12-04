@@ -16,10 +16,14 @@ if (isset($_SESSION['user'])) {
 } else if (isset($_SESSION['error'])) {
     include "loginForm.php";
     echo "<br />" . $_SESSION["error"];
+    unset($_SESSION["error"]);
 } else {
     include "loginForm.php";
 }
-$_SESSION = array();
 ?>
 </body>
+<footer>
+    <br />
+    <small> <a href="../html/WatIndex.html">Home</a></small>
+</footer>
 </html>
